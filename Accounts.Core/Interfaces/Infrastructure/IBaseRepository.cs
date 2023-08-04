@@ -10,6 +10,6 @@ namespace Accounts.Core.Interfaces.Infrastructure
     public interface IBaseRepository<T> where T : class
     {
         IQueryable<T> GetAll();
-        IQueryable<T> Find(Expression<Func<T, bool>> predicate);
+        IQueryable<T> Include(params Expression<Func<T, object>>[] includes);
     }
 }

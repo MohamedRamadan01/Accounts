@@ -8,7 +8,7 @@ namespace Accounts.Core.Dtos
 {
     public class SearchParameters
     {
-        public string AccountId { get; set; }
+        public int AccountId { get; set; } = 0;
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
         public decimal? FromAmount { get; set; }

@@ -18,6 +18,9 @@ namespace Accounts.Core.Entities
         [Required]
         [StringLength(20)]
         public string AccountNumber { get; set; }
+
+        public List<Statement> Statements { get; set; } = new();
+
     }
 
 }

@@ -10,6 +10,7 @@ namespace Accounts.Core.Interfaces.Services
 {
     public interface IStatementService
     {
-        IEnumerable<Statement> GetStatements(SearchParameters searchParameters);
+        GetStatementsResult GetStatements(SearchParameters searchParameters);
+        GetStatementsResult GetStatements();
     }
 }

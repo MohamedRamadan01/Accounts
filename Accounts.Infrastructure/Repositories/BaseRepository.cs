@@ -26,12 +26,16 @@ namespace Accounts.Infrastracture.Repositories
         {
             return _dbSet;
         }
-
-        public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
+     
+        public IQueryable<T> Include(params Expression<Func<T, object>>[] includes)
         {
-            return _dbSet.Where(predicate);
+            IQueryable<T> query = _context.Set<T>();
+            if (includes != null)
+                foreach (Expression<Func<T, object>> include in includes)
+                    query = query.Include(include);
+
+            return query;
         }
 
-      
     }
 }
