@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Security.Claims;
 using System.Text;
 
@@ -14,9 +15,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<AccountsDbContext>(x => x.UseJet(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -24,7 +32,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "V1",
         Title = "Accounts task",
-        Description = "Accounts WebAPI"
+        Description = "Statements API"
     });
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -81,7 +89,7 @@ if (app.Environment.IsDevelopment())
   
     app.UseSwagger();
     app.UseSwaggerUI(options => {
-        options.SwaggerEndpoint("/swagger/V1/swagger.json", "Product WebAPI");
+        options.SwaggerEndpoint("/swagger/V1/swagger.json", "Statements API");
     });
 }
 

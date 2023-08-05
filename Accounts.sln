@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Api", "Accounts\Accounts.Api.csproj", "{9A771749-C171-46F5-9E98-D85FED1794B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounts.Api", "Accounts\Accounts.Api.csproj", "{9A771749-C171-46F5-9E98-D85FED1794B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Core", "Accounts.Core\Accounts.Core.csproj", "{25339333-2BF6-42BF-98CF-75288CEFBA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounts.Core", "Accounts.Core\Accounts.Core.csproj", "{25339333-2BF6-42BF-98CF-75288CEFBA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Infrastructure", "Accounts.Infrastructure\Accounts.Infrastructure.csproj", "{1569D135-365D-4D00-8C93-21C8D9359C4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounts.Infrastructure", "Accounts.Infrastructure\Accounts.Infrastructure.csproj", "{1569D135-365D-4D00-8C93-21C8D9359C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Application", "Accounts.Application\Accounts.Application.csproj", "{54D7FE0E-A145-454B-AA31-1CBE1ABF9684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounts.Application", "Accounts.Application\Accounts.Application.csproj", "{54D7FE0E-A145-454B-AA31-1CBE1ABF9684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.UnitTest", "Accounts.Tests\Accounts.UnitTest.csproj", "{612803CE-2E64-4127-B3A0-C54A36033075}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{54D7FE0E-A145-454B-AA31-1CBE1ABF9684}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54D7FE0E-A145-454B-AA31-1CBE1ABF9684}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54D7FE0E-A145-454B-AA31-1CBE1ABF9684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612803CE-2E64-4127-B3A0-C54A36033075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612803CE-2E64-4127-B3A0-C54A36033075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612803CE-2E64-4127-B3A0-C54A36033075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612803CE-2E64-4127-B3A0-C54A36033075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
