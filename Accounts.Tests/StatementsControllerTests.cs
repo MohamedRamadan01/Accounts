@@ -44,10 +44,12 @@ namespace Accounts.UnitTest
             {
                 HttpContext = new DefaultHttpContext
                 {
-                    User = MockClaimsPrincipal("Admin")
+                    User = MockClaimsPrincipal("User")
                 }
             };
 
+            _mockStatementService.Setup(s => s.GetStatements(It.IsAny<SearchParameters>()))
+                .Returns(new GetStatementsResult { IsSuccess = true, statements = new List<StatementDto>() }); 
             // Act
             var result = controller.GetStatements(new SearchParameters());
 
